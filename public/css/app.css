@@ -1,0 +1,21 @@
+.main-category{
+    opacity:0;
+	visibility:hidden;
+}
+.cat-heading:hover + .main-category{
+    opacity:1;
+	visibility:visible;
+}
+.main-category:hover{
+    opacity:1;
+	visibility:visible;
+}
+.cat-heading{
+	background-color: grey;
+}
+.cat-heading:hover{
+	background-color: #F7941D;
+}
+.main-category a:hover + .main-category{
+	background-color: #F7941D;
+}
