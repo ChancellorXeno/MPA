@@ -118,9 +118,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action">
-																
-																
-																
+
 															</div>
 															<div class="product-action-2">
 																<a title="Add to cart" href="#">Add to cart</a>

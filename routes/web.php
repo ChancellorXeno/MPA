@@ -22,10 +22,11 @@ Route::get('/home', function () {
 Route::get('/cart', function () {
     return view('cart');
 });
-Route::get('/blog-single-sidebar', function () {
-    return view('blog-single-sidebar');
+Route::get('/products-page', function () {
+    return view('products-page');
 });
 
+Route::get('/products-page/{color}', 'App\Http\Controllers\CategoryController@show');
 
 Route::get('/welcome', function () {
     return view('welcome');

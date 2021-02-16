@@ -1,3 +1,8 @@
+img{
+	width: 100% !important;
+	height: auto !important;
+}
+/* Dropdown */
 .main-category{
     opacity:0;
 	visibility:hidden;
@@ -17,5 +22,16 @@
 	background-color: #F7941D;
 }
 .main-category a:hover + .main-category{
+	background-color: #F7941D;
+}
+
+/* Products */
+.product-action a{
+	background-color: darkgrey;
+	color: white !important;
+	font-weight: bold;
+	padding: 12px;
+}
+.product-action a:hover{
 	background-color: #F7941D;
 }

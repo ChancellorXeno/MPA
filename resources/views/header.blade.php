@@ -165,11 +165,11 @@
 							<div class="all-category">
 								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
 								<ul class="main-category">
-									<li><a href="#">Primary Colors</a></li>
-									<li><a href="#">Secondary Colors</a></li>
-									<li><a href="#">Tetriary Colors</a></li>
-									<li><a href="#">Pastel Colors</a></li>
-									<li><a href="#">Shades of Grey</a></li>
+									<li><a href="products-page">Primary Colors</a></li>
+									<li><a href="products-page">Secondary Colors</a></li>
+									<li><a href="products-page">Tetriary Colors</a></li>
+									<li><a href="products-page">Pastel Colors</a></li>
+									<li><a href="products-page">Shades of Grey</a></li>
 								</ul>
 							</div>
 						</div>
