@@ -24,14 +24,43 @@ img{
 .main-category a:hover + .main-category{
 	background-color: #F7941D;
 }
-
-/* Products */
+/* Homepage */
+.single-banner{
+	height: 350px;
+}
+.trending-item{
+	height: 350px !important;
+}
+.shaders{
+	height: 100% !important;
+}
+.very-light-grey{
+	color: lightgrey !important;
+}
+.very-light-grey-button{
+	background-color: lightgrey !important;
+}
+.very-dark-grey{
+	color: #333333 !important;
+	font-weight: bold !important;
+	margin: 0px !important;
+}
+.very-light-grey-button:hover{
+	background-color: #F7941D !important;
+}
+/* Products Page */
 .product-action a{
 	background-color: darkgrey;
 	color: white !important;
 	font-weight: bold;
-	padding: 12px;
+	padding: 9px;
 }
 .product-action a:hover{
 	background-color: #F7941D;
+}
+.product-action{
+	position: relative;
+	top: 0%;
+	left: 100%;
+	transform: translate(-50%, -50%);
 }

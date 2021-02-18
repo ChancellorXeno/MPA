@@ -7,8 +7,10 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function show($category){
-        $color = \DB::table('colors')->where('category', $category)->first();
+        $color = \DB::table('colors')->where('category', $category)->get();
 
-        dd($color);
+        return view('products-page', [
+            'color' => $color
+        ]);
     }
 }

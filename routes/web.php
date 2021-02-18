@@ -19,15 +19,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('index');
 });
-Route::get('/cart', function () {
-    return view('cart');
-});
-Route::get('/products-page', function () {
-    return view('products-page');
-});
+Route::get('/cart', 'App\Http\Controllers\CartController@show');
 
-Route::get('/products-page/{color}', 'App\Http\Controllers\CategoryController@show');
-
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@show');

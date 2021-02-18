@@ -7,32 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-@include ('header');
+@include ('header')
 
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-            <h3>Red</h3>
-		    <img class="product-image" src="images/colors/red.png" alt="Red">
-		    <div class="product-action">
-		    	<a title="Add to cart" href="#">[€ 24,99]  Add to cart</a>
-		    </div>
-        </div>
-        <div class="col-sm">
-            <h3>Green</h3>
-            <img class="product-image" src="images/colors/green.png" alt="Green">
-            <div class="product-action">
-		    	<a title="Add to cart" href="#">[€ 24,99]  Add to cart</a>
-		    </div>
-        </div>
-        <div class="col-sm">
-            <h3>Blue</h3>
-            <img class="product-image" src="images/colors/blue.png" alt="Blue"> 
-            <div class="product-action">
-		    	<a title="Add to cart" href="#">[€ 24,99]  Add to cart</a>
-		    </div>
-        </div>
-        
+<?php   foreach($color as $bro){ ?>
+            <div class="col-sm-4">
+                <h3>{{ $bro->name }}</h3>
+		        <img class="product-image" src="{{ $bro->image }}" alt="Red">
+		        <div class="product-action">
+		        	<a title="Add to cart" href="#">[€ {{ $bro->price }}]  Add to cart</a>
+		        </div>
+            </div>
+<?      } ?>
     </div>
 </div>
 </body>
