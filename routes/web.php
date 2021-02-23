@@ -19,6 +19,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('index');
 });
-Route::get('/cart', 'App\Http\Controllers\CartController@show');
 
-Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@show');
+Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index');
+Route::get('/cart', 'App\Http\Controllers\CartController@index');
+
+// test in progress
+Route::get('/add-to-cart/{id}', 'App\Http\Controllers\CartController@store');
+
+Route::get('/quantity-up/{id}', 'App\Http\Controllers\CartController@increase');
+Route::get('/quantity-down/{id}', 'App\Http\Controllers\CartController@decrease');

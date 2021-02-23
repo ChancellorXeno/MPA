@@ -7,16 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-@include ('header')
+@include('header')
 
 <div class="container">
     <div class="row">
 <?php   foreach($color as $bro){ ?>
             <div class="col-sm-4">
-                <h3>{{ $bro->name }}</h3>
-		        <img class="product-image" src="{{ $bro->image }}" alt="Red">
+                <h3>{{$bro->name}}</h3>
+		        <img class="product-image" src="{{$bro->image}}" alt="{{$bro->name}}">
 		        <div class="product-action">
-		        	<a title="Add to cart" href="#">[€ {{ $bro->price }}]  Add to cart</a>
+		        	<a title="Add to cart" href="/MPA/public/add-to-cart/{{$bro->id}}">€ {{$bro->price}}  Add to cart</a>
 		        </div>
             </div>
 <?      } ?>

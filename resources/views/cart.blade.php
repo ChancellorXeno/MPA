@@ -42,12 +42,12 @@
 					<tbody>
 <?php					foreach($color as $colors){ ?>
 							<tr>
-								<td class="image" data-title="No"><img src="{{ $colors->image }}" alt="#"></td>
+								<td class="image" data-title="No"><img src="{{$colors->image}}" alt="#"></td>
 								<td class="product-des" data-title="Description">
-									<p class="product-name"><a href="#">{{ $colors->name }}</a></p>
-									<p class="product-des">{{ $colors->category }} Collection</p>
+									<p class="product-name"><a href="#">{{$colors->name}}</a></p>
+									<p class="product-des">{{$colors->category}} Collection</p>
 								</td>
-								<td class="price" data-title="Price"><span>{{ $colors->price }}</span></td>
+								<td class="price" data-title="Price"><span>{{$colors->price}}</span></td>
 								<td class="qty" data-title="Qty"><!-- Input Order -->
 									<div class="input-group">
 										<div class="button minus">
@@ -55,7 +55,7 @@
 												<i class="ti-minus"></i>
 											</button>
 										</div>
-										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{ $colors->quantity }}">
+										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{$colors->quantity}}">
 										<div class="button plus">
 											<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
 												<i class="ti-plus"></i>
@@ -64,7 +64,7 @@
 									</div>
 									<!--/ End Input Order -->
 								</td>
-								<td class="total-amount" data-title="Total"><span>{{ $colors->total }}</span></td>
+								<td class="total-amount" data-title="Total"><span>{{$colors->total}}</span></td>
 								<td class="action" data-title="Remove"><a href="#"><i class="ti-trash remove-icon"></i></a></td>
 							</tr>
 <?php 					} ?>
