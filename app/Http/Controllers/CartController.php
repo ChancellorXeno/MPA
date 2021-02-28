@@ -25,7 +25,7 @@ class CartController extends Controller
         $collect = \DB::table('colors')->where('id', $id)->get();
         dd($collect);
 
-        $color = new CartController();
+        $color = new Cart(); 
         $color->name = $collect->name;
         $color->save();
     }

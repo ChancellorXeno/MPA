@@ -20,6 +20,9 @@ Route::get('/home', function () {
     return view('index');
 });
 
+Route::get('/register', 'App\Http\Controllers\UserController@getRegister');
+Route::get('/login', 'App\Http\Controllers\UserController@getLogin');
+
 Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index');
 Route::get('/cart', 'App\Http\Controllers\CartController@index');
 
