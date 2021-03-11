@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Color;
 use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use Session;
 
 class CartController extends Controller
 {
@@ -20,14 +25,15 @@ class CartController extends Controller
         // shows a view to create a new resource
 
     }
-    public function store($id){
+    public function store(Request $request, $id){ //in progress
+        $product = Color::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
 
-        $collect = \DB::table('colors')->where('id', $id)->get();
-        dd($collect);
-
-        $color = new Cart(); 
-        $color->name = $collect->name;
-        $color->save();
+        $request->session()->put('cart', $cart);
+        dd($request->session()->get('cart'));
+        return redirect()->route('cart');
     }
     public function edit(){
         // Show a view to edit an existing resource

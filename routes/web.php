@@ -27,7 +27,10 @@ Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController
 Route::get('/cart', 'App\Http\Controllers\CartController@index');
 
 // test in progress
-Route::get('/add-to-cart/{id}', 'App\Http\Controllers\CartController@store');
+Route::get('/add-to-cart/{id}', [
+    'uses' => 'App\Http\Controllers\CartController@Store',
+    'as' => 'color.addToCart'
+]);
 
 Route::get('/quantity-up/{id}', 'App\Http\Controllers\CartController@increase');
 Route::get('/quantity-down/{id}', 'App\Http\Controllers\CartController@decrease');

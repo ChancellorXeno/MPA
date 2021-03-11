@@ -16,7 +16,7 @@
                 <h3>{{$bro->name}}</h3>
 		        <img class="product-image" src="{{$bro->image}}" alt="{{$bro->name}}">
 		        <div class="product-action">
-		        	<a title="Add to cart" href="/MPA/public/add-to-cart/{{$bro->id}}">€ {{$bro->price}}  Add to cart</a>
+		        	<a title="Add to cart" href="{{ route('color.addToCart', ['id' => $bro->id]) }}">€ {{$bro->price}}  Add to cart</a>
 		        </div>
             </div>
 <?      } ?>
