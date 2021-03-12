@@ -13,12 +13,19 @@ class CartController extends Controller
 {
     public function index(){
         // render a list of a resource
-        $amount = 1;
-        $color = \DB::table('cart-contents')->where('quantity', '>=', $amount)->get();
+        // $amount = 1;
+        // $color = \DB::table('cart-contents')->where('quantity', '>=', $amount)->get();
 
-        return view('cart', [
-            'color' => $color
-        ]);
+        // return view('shopping-cart', [
+        //     'color' => $color
+        // ]);
+
+        if (!Session::has('cart')){
+            return view('shop.shopping-cart', ['products' => null]);
+        }
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+        return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function create(){
@@ -32,8 +39,7 @@ class CartController extends Controller
         $cart->add($product, $product->id);
 
         $request->session()->put('cart', $cart);
-        dd($request->session()->get('cart'));
-        return redirect()->route('cart');
+        return redirect()->route('index');
     }
     public function edit(){
         // Show a view to edit an existing resource
