@@ -21,11 +21,12 @@ class CartController extends Controller
         // ]);
 
         if (!Session::has('cart')){
-            return view('shop.shopping-cart', ['products' => null]);
+            return view('shopping-cart', ['products' => null]);
         }
         $oldCart = Session::get('cart');
         $cart = new Cart($oldCart);
-        return view('shop.shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+        dd($cart);
+        return view('shopping-cart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
     }
 
     public function create(){
@@ -38,12 +39,11 @@ class CartController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product, $product->id);
 
-        $request->session()->put('cart', $cart);
-        return redirect()->route('index');
+        $request->session()->push('cart', $cart);
+        return redirect()->route('color.shoppingCart');
     }
     public function edit(){
         // Show a view to edit an existing resource
-
     }
     public function update(){
         // Persist the edited resource

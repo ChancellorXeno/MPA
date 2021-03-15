@@ -5,7 +5,6 @@
 </head>
 <body class="js">
 @include('header')
-
 	<!-- Slider Area -->
 	<section class="hero-slider">
 		<!-- Single Slider -->

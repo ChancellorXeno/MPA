@@ -8,9 +8,11 @@ Class Cart
     public $totalQty = 0;
     public $totalPrice = 0;
 
-    public function __contruct($oldCart)
+    
+    function __construct($oldCart)
     {
-        if ($oldCart){
+        // dd($oldCart);
+        if ($oldCart != null){
             $this->items = $oldCart->items;
             $this->totalQty = $oldCart->totalQty;
             $this->totalPrice = $oldCart->totalPrice;

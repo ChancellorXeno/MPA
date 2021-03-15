@@ -18,13 +18,16 @@ Route::get('/', function () {
 });
 Route::get('/home', function () {
     return view('index');
-});
+})->name('home');
 
 Route::get('/register', 'App\Http\Controllers\UserController@getRegister');
 Route::get('/login', 'App\Http\Controllers\UserController@getLogin');
 
-Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index');
-Route::get('/cart', 'App\Http\Controllers\CartController@index');
+Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index')->name('productspage');
+Route::get('/cart', [
+    'uses' => 'App\Http\Controllers\CartController@index',
+    'as' => 'color.shoppingCart'
+]);
 
 // test in progress
 Route::get('/add-to-cart/{id}', [
