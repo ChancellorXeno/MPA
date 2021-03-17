@@ -64,7 +64,10 @@ img{
 	left: 100%;
 	transform: translate(-50%, -50%);
 }
-
+/* Cart page */
+.ti-minus{
+	padding-left: 32px;
+}
 /* Register/Login */
 /* form{
 	max-width: 50%;

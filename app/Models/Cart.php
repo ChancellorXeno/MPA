@@ -4,14 +4,13 @@ namespace App\Models;
 
 Class Cart
 {
-    public $items = null;
+    public $items = [];
     public $totalQty = 0;
     public $totalPrice = 0;
 
     
     function __construct($oldCart)
     {
-        // dd($oldCart);
         if ($oldCart != null){
             $this->items = $oldCart->items;
             $this->totalQty = $oldCart->totalQty;
@@ -32,5 +31,22 @@ Class Cart
         $this->items[$id] = $storedItem;
         $this->totalQty++;
         $this->totalPrice += $item->price;
+    }
+
+    public function decrease($id)
+    {
+        $this->items[$id]['qty']--;
+        $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
+        $this->totalQty--;
+        $this->totalPrice -= $this->items[$id]['item']['price'];
+        if ($this->items[$id]['qty'] <= 0) {
+            unset($this->items[$id]);
+        }
+    }
+
+    public function destroy($id)
+    {
+
+        unset($this->items[$id]);
     }
 }

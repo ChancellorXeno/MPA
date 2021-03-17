@@ -40,39 +40,39 @@
 						</tr>
 					</thead>
 					<tbody>
-<?php				if($products != null){
-						foreach($products as $product){ ?>
-							<tr>
-								<td class="image" data-title="No"><img src="{{$product->image}}" alt="#"></td>
-								<td class="product-des" data-title="Description">
-									<p class="product-name"><a href="#">{{$product['item']['name']}}</a></p>
-									<p class="product-des">{{$product->category}} Collection</p>
-								</td>
-								<td class="price" data-title="Price"><span>{{$product->price}}</span></td>
-								<td class="qty" data-title="Qty">
-								<!-- Input Order -->
-									<div class="input-group">
-										<div class="button minus">
-											<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-												<i class="ti-minus"></i>
-											</button>
+<?php					if($products != null){
+							foreach($products as $product){ ?>
+								<tr>
+									<td class="image" data-title="No"><img src="{{$product['item']['image']}}" alt="#"></td>
+									<td class="product-des" data-title="Description">
+										<p class="product-name"><a href="#">{{$product['item']['name']}}</a></p>
+										<p class="product-des">{{$product['item']['category']}} Collection</p>
+									</td>
+									<td class="price" data-title="Price"><span>€{{$product['item']['price']}}</span></td>
+									<td class="qty" data-title="Qty">
+									<!-- Input Order -->
+										<div class="input-group">
+											<div class="button minus">
+												<a href="{{ route('color.decrease', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+													<i class="ti-minus"></i>
+												</a>
+											</div>
+											<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{$product['qty']}}">
+											<div class="button plus">
+												<a href="{{ route('color.addToCart', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+													<i class="ti-plus"></i>
+												</a>
+											</div>
 										</div>
-										<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{$product->quantity}}">
-										<div class="button plus">
-											<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
-												<i class="ti-plus"></i>
-											</button>
-										</div>
-									</div>
-									<!--/ End Input Order -->
-								</td>
-								<td class="total-amount" data-title="Total"><span>{{$product->total}}</span></td>
-								<td class="action" data-title="Remove"><a href="#"><i class="ti-trash remove-icon"></i></a></td>
-							</tr>
-<?php 					} 
-					}else{
-						echo 'nope';
-					} ?>
+										<!--/ End Input Order -->
+									</td>
+									<td class="total-amount" data-title="Total"><span>€{{$product['price']}}</span></td>
+									<td class="action" data-title="Remove"><a href="{{ route('color.destroy', ['id' => $product['item']['id']]) }}"><i class="ti-trash remove-icon"></i></a></td>
+								</tr>
+<?php 						} 
+						}else{
+							echo('The cart is currently empty');
+						} ?>
 					</tbody>
 				</table>
 				<!--/ End Shopping Summery -->
@@ -92,21 +92,18 @@
 									</form>
 								</div>
 								<div class="checkbox">
-									<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+10$)</label>
+									<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+€10)</label>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-7 col-12">
 							<div class="right">
 								<ul>
-									<li>Cart Subtotal<span>$330.00</span></li>
-									<li>Shipping<span>Free</span></li>
-									<li>You Save<span>$20.00</span></li>
-									<li class="last">You Pay<span>$310.00</span></li>
+									<li>Cart Subtotal<span> €{{$totalPrice}}</span></li>
 								</ul>
 								<div class="button5">
 									<a href="#" class="btn">Checkout</a>
-									<a href="#" class="btn">Continue shopping</a>
+									<a href="home" class="btn">Continue shopping</a>
 								</div>
 							</div>
 						</div>

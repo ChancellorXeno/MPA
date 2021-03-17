@@ -34,6 +34,11 @@ Route::get('/add-to-cart/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Store',
     'as' => 'color.addToCart'
 ]);
-
-Route::get('/quantity-up/{id}', 'App\Http\Controllers\CartController@increase');
-Route::get('/quantity-down/{id}', 'App\Http\Controllers\CartController@decrease');
+Route::get('/decrease/{id}', [
+    'uses' => 'App\Http\Controllers\CartController@Decrease',
+    'as' => 'color.decrease'
+]);
+Route::get('/remove-from-cart/{id}', [
+    'uses' => 'App\Http\Controllers\CartController@Destroy',
+    'as' => 'color.destroy'
+]);
