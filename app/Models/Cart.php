@@ -46,7 +46,8 @@ Class Cart
 
     public function destroy($id)
     {
-
+        $this->totalQty -= $this->items[$id]['qty'];
+        $this->totalPrice -= $this->items[$id]['price'];
         unset($this->items[$id]);
     }
 }

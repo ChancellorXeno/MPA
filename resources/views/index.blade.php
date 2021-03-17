@@ -18,7 +18,7 @@
 									<div class="hero-text">
 										<h1><span>EXCLUSIVE DEAL </span>Rainbow Color</h1>
 										<div class="button">
-											<a href="#" class="btn">€ 1250.00 Add to cart</a>
+											<a href="{{ route('color.addToCart', [29]) }}" class="btn">€ 1250.00 Add to cart</a>
 										</div>
 									</div>
 								</div>
@@ -43,7 +43,7 @@
 						<div class="content">
 							<p>Primary Collection</p>
 							<h3>Red</h3>
-							<a href="#">€ 24.99</a>
+							<a href="{{ route('color.addToCart', [1]) }}">€ 24.99</a>
 						</div>
 					</div>
 				</div>
@@ -55,7 +55,7 @@
 						<div class="content">
 							<p>Secondary Collection</p>
 							<h3>Magenta</h3>
-							<a href="#">€ 49.99</a>
+							<a href="{{ route('color.addToCart', [6]) }}">€ 49.99</a>
 						</div>
 					</div>
 				</div>
@@ -67,7 +67,7 @@
 						<div class="content">
 							<p>Tetriary Collection</p>
 							<h3>Azure</h3>
-							<a href="#">€ 74.99</a>
+							<a href="{{ route('color.addToCart', [10]) }}">€ 74.99</a>
 						</div>
 					</div>
 				</div>
@@ -104,7 +104,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [13]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -125,7 +125,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [14]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -146,7 +146,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [15]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -168,7 +168,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [22]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -189,7 +189,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [18]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -210,7 +210,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [19]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -231,7 +231,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [20]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -253,7 +253,7 @@
 														</a>
 														<div class="button-head">
 															<div class="product-action-2">
-																<a title="Add to cart" href="#">Add to cart</a>
+																<a title="Add to cart" href="{{ route('color.addToCart', [21]) }}">Add to cart</a>
 															</div>
 														</div>
 													</div>
@@ -288,7 +288,7 @@
 						<div class="content">
 							<p>Shades of Grey Collection</p>
 							<h3>Very Light Grey</h3>
-							<a href="#">€9.99 Add to cart</a>
+							<a href="{{ route('color.addToCart', [23]) }}">€9.99 Add to cart</a>
 						</div>
 					</div>
 				</div>
@@ -300,7 +300,7 @@
 						<div class="content">
 							<p>Shades of Grey Collection</p>
 							<h3 class="very-light-grey">Very Dark Grey</h3>
-							<a class="btn very-light-grey-button" href="#"><p class="very-dark-grey">€9.99 Add to cart</p></a>
+							<a class="btn very-light-grey-button" href="{{ route('color.addToCart', [27]) }}"><p class="very-dark-grey">€9.99 Add to cart</p></a>
 						</div>
 					</div>
 				</div>
@@ -332,7 +332,7 @@
 								</a>
 								<div class="button-head">
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="{{ route('color.addToCart', [21]) }}">Add to cart</a>
 									</div>
 								</div>
 							</div>
@@ -354,7 +354,7 @@
 								</a>
 								<div class="button-head">
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="{{ route('color.addToCart', [5]) }}">Add to cart</a>
 									</div>
 								</div>
 							</div>
@@ -376,7 +376,7 @@
 								</a>
 								<div class="button-head">
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="{{ route('color.addToCart', [11]) }}">Add to cart</a>
 									</div>
 								</div>
 							</div>
@@ -398,7 +398,7 @@
 								</a>
 								<div class="button-head">
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="{{ route('color.addToCart', [25]) }}">Add to cart</a>
 									</div>
 								</div>
 							</div>
@@ -420,7 +420,7 @@
 								</a>
 								<div class="button-head">
 									<div class="product-action-2">
-										<a title="Add to cart" href="#">Add to cart</a>
+										<a title="Add to cart" href="{{ route('color.addToCart', [10]) }}">Add to cart</a>
 									</div>
 								</div>
 							</div>

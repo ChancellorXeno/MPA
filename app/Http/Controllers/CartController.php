@@ -40,12 +40,7 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->decrease($id);
-
-        if (count($cart->items) > 0) {
-            Session::put('cart', $cart);
-        } else {
-            Session::forget('cart');
-        }
+        Session::put('cart', $cart);
 
         return redirect()->back();
     }
@@ -54,7 +49,7 @@ class CartController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
         $cart = new Cart($oldCart);
         $cart->destroy($id);
-        Session::forget('cart');
+        Session::put('cart', $cart);
 
         return redirect()->back();
     }
