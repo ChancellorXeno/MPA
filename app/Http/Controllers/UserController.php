@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller
 {
@@ -23,10 +24,15 @@ class UserController extends Controller
         ]);
         $user->save();
 
-        return redirect()->route('login');
+        return redirect()->route('user.login');
     }
 
     public function getLogin(){
         return view('login');
+    }
+    public function postLogin(Request $request){
+        if (Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')])){
+            return redirect()->route('home');
+        }
     }
 }

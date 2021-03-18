@@ -29,10 +29,13 @@ Route::post('/register', [
     'as' => 'user.register'
 ]);
 Route::get('/login', [
-    'uses' => 'App\Http\Controllers\UserController@getLogin'
+    'uses' => 'App\Http\Controllers\UserController@getLogin',
     'as' => 'user.login'
-])->name('login');
-
+]);
+Route::post('/login', [
+    'uses' => 'App\Http\Controllers\UserController@postLogin',
+    'as' => 'user.login'
+]);
 
 Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index')->name('productspage');
 
