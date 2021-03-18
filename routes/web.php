@@ -20,8 +20,18 @@ Route::get('/home', function () {
     return view('index');
 })->name('home');
 
-Route::get('/register', 'App\Http\Controllers\UserController@getRegister');
-Route::get('/login', 'App\Http\Controllers\UserController@getLogin');
+Route::get('/register', [
+    'uses' => 'App\Http\Controllers\UserController@getRegister',
+    'as' => 'user.register'
+]);
+Route::post('/register', [
+    'uses' => 'App\Http\Controllers\UserController@postRegister',
+    'as' => 'user.register'
+]);
+Route::get('/login', [
+    'uses' => 'App\Http\Controllers\UserController@getLogin'
+    'as' => 'user.login'
+])->name('login');
 
 
 Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index')->name('productspage');

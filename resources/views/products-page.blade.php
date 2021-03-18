@@ -11,12 +11,12 @@
 
 <div class="container">
     <div class="row">
-<?php   foreach($color as $bro){ ?>
+<?php   foreach($colors as $color){ ?>
             <div class="col-sm-4">
-                <h3>{{$bro->name}}</h3>
-		        <img class="product-image" src="{{$bro->image}}" alt="{{$bro->name}}">
+                <h3>{{$color->name}}</h3>
+		        <img class="product-image" src="{{$color->image}}" alt="{{$color->name}}">
 		        <div class="product-action">
-		        	<a title="Add to cart" href="{{ route('color.addToCart', ['id' => $bro->id]) }}">€ {{$bro->price}}  Add to cart</a>
+		        	<a title="Add to cart" href="{{ route('color.addToCart', ['id' => $color->id]) }}">€ {{$color->price}}  Add to cart</a>
 		        </div>
             </div>
 <?      } ?>

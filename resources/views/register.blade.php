@@ -8,21 +8,22 @@
 </head>
 <body>
 @include('header')
-<div>
-    <form action="" method="post">
-        <div class="form-group">
-            <label for="Username">Email address</label>
-            <input type="username" class="form-control" id="UsernameInput" placeholder="Username">
-        </div>
-        <div class="form-group">
-            <label for="Password">Password</label>
-            <input type="password" class="form-control" id="PasswordInput" placeholder="Password">
-        </div>
-            <div class="form-group form-check"> 
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+    <div>
+        <form action="{{ route('user.register') }}" method="post">
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" name="username" class="form-control" id="UsernameInput" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" name="password" class="form-control" id="PasswordInput" placeholder="Password">
+            </div>
+                <div class="form-group form-check"> 
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            @csrf
+        </form>
+    </div>
 </body>
 </html>

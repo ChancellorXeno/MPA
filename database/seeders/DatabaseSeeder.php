@@ -44,11 +44,7 @@ class DatabaseSeeder extends Seeder
             ['id' => 26, 'name' => 'Dark Grey', 'price' => 99.99, 'category' => 'Shades', 'image' => '/MPA/public/images/shades/dark-grey.png'],
             ['id' => 27, 'name' => 'Very Dark Grey', 'price' => 99.99, 'category' => 'Shades', 'image' => '/MPA/public/images/shades/very-dark-grey.png'],
             ['id' => 28, 'name' => 'Black', 'price' => 99.99, 'category' => 'Shades', 'image' => '/MPA/public/images/shades/black.png'],
-            ['id' => 29, 'name' => 'Rainbow', 'price' => 1250.00, 'category' => 'Yes', 'image' => '/MPA/public/images/colors/rainbow.png']
-        ]);
-        DB::table('cart-contents')->insert([
-            ['id' => 1, 'name' => 'Red', 'price' => 24.99, 'category' => 'Primary', 'image' => '/MPA/public/images/colors/red.png', 'quantity' => 1, 'total' => 24.99],
-            ['id' => 2, 'name' => 'Green', 'price' => 24.99, 'category' => 'Primary', 'image' => '/MPA/public/images/colors/green.png', 'quantity' => 2, 'total' => 49.98]
+            ['id' => 29, 'name' => 'Rainbow', 'price' => 1250.00, 'category' => 'Special', 'image' => '/MPA/public/images/colors/rainbow.png']
         ]);
     }
 }

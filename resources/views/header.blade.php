@@ -66,7 +66,7 @@
 						<!-- Top Right -->
 						<div class="right-content">
 							<ul class="list-main">
-								<li><i class="ti-user"></i> <a href="register">Register</a></li>
+								<li><i class="ti-user"></i> <a href="{{route('user.register')}}">Register</a></li>
 								<li><i class="ti-power-off"></i><a href="login">Login</a></li>
 							</ul>
 						</div>
