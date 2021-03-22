@@ -33,6 +33,25 @@ class UserController extends Controller
     public function postLogin(Request $request){
         if (Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')])){
             return redirect()->route('home');
+        }else{
+            return back();
         }
+    }
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
+    }
+    public function history(){
+        $orders = Auth::user()->orders;
+        $orders->transform(function($order, $key){
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('history', ['orders' => $orders]);
     }
 }

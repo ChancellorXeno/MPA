@@ -15,4 +15,18 @@ class CategoryController extends Controller
             'colors' => $colors
         ]);
     }
+    public function getAll(){
+        $colors = Color::get();
+
+        return view('products-page', [
+            'colors' => $colors
+        ]);
+    }
+    public function getOne($id){
+        $color = Color::where('id', $id)->get();
+
+        return view('product', [
+            'color' => $color
+        ]);
+    }
 }

@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-</head>
-<body class="js">
 @include('header')
 	<!-- Slider Area -->
 	<section class="hero-slider">
@@ -448,7 +442,7 @@
 	<!-- Bootstrap JS -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Color JS -->
-	<script src="js/colors.js"></script>
+	<script src="js/app.js"></script>
 	<!-- Slicknav JS -->
 	<script src="js/slicknav.min.js"></script>
 	<!-- Owl Carousel JS -->

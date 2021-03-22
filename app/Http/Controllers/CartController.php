@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Color;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Session;
+use Auth; 
 
 class CartController extends Controller
 {
@@ -52,5 +54,19 @@ class CartController extends Controller
         Session::put('cart', $cart);
 
         return redirect()->back();
+    }
+    public function checkout(){
+        // Collect the instance
+        $oldCart = Session::has('cart') ? Session::get('cart') : null;
+        $cart = new Cart($oldCart);
+        // Dump in database
+        $order = new Order();
+        $order->cart = serialize($cart);
+
+        Auth::user()->orders()->save($order);
+        // $order->name = $request->input('name');
+
+        // Wipe the cart
+        Session::forget('cart');
     }
 }

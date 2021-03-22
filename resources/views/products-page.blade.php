@@ -14,7 +14,7 @@
 <?php   foreach($colors as $color){ ?>
             <div class="col-sm-4">
                 <h3>{{$color->name}}</h3>
-		        <img class="product-image" src="{{$color->image}}" alt="{{$color->name}}">
+		        <a href="{{ route('color.product', ['id' => $color->id]) }}"><img class="products-image" src="{{$color->image}}" alt="{{$color->name}}"></a>
 		        <div class="product-action">
 		        	<a title="Add to cart" href="{{ route('color.addToCart', ['id' => $color->id]) }}">€ {{$color->price}}  Add to cart</a>
 		        </div>

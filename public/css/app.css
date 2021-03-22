@@ -64,6 +64,11 @@ img{
 	left: 100%;
 	transform: translate(-50%, -50%);
 }
+/* Single product page */
+.product-image{
+	height: 500px !important;
+	width: 500px !important;
+}
 /* Cart page */
 .ti-minus{
 	padding-left: 32px;

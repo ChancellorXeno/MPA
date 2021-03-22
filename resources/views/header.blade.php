@@ -66,8 +66,13 @@
 						<!-- Top Right -->
 						<div class="right-content">
 							<ul class="list-main">
-								<li><i class="ti-user"></i> <a href="{{route('user.register')}}">Register</a></li>
+								@if(Auth::check())
+								<li><i class="ti-user"></i><a href="{{ route('user.history') }}">{{Auth::user()->username}}</a></li>
+								<li><i class="ti-power-off"></i><a href="{{ route('user.logout') }}">Logout</a></li>
+								@else 
+								<li><i class="ti-user"></i> <a href="{{ route('user.register') }}">Register</a></li>
 								<li><i class="ti-power-off"></i><a href="login">Login</a></li>
+								@endif
 							</ul>
 						</div>
 						<!-- End Top Right -->
@@ -84,6 +89,7 @@
 							<div class="all-category">
 								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
 								<ul class="main-category">
+									<li><a href="/MPA/public/products-page/all">All Colors</a></li>
 									<li><a href="/MPA/public/products-page/primary">Primary Colors</a></li>
 									<li><a href="/MPA/public/products-page/secondary">Secondary Colors</a></li>
 									<li><a href="/MPA/public/products-page/tetriary">Tetriary Colors</a></li>
@@ -115,6 +121,5 @@
 		<!--/ End Header Inner -->
 	</header>
 	<!--/ End Header -->
-
 </body>
 </html>

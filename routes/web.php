@@ -36,9 +36,18 @@ Route::post('/login', [
     'uses' => 'App\Http\Controllers\UserController@postLogin',
     'as' => 'user.login'
 ]);
+Route::get('/logout', [
+    'uses' => 'App\Http\Controllers\UserController@logout',
+    'as' => 'user.logout'
+]);
 
+Route::get('/products-page/all', 'App\Http\Controllers\CategoryController@getAll');
 Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController@index')->name('productspage');
 
+Route::get('/product/{id}', [
+    'uses' => 'App\Http\Controllers\CategoryController@getOne',
+    'as' => 'color.product'
+]);
 
 Route::get('/cart', [
     'uses' => 'App\Http\Controllers\CartController@index',
@@ -55,4 +64,13 @@ Route::get('/decrease/{id}', [
 Route::get('/remove-from-cart/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Destroy',
     'as' => 'color.destroy'
+]);
+Route::get('/checkout', [
+    'uses' => 'App\Http\Controllers\CartController@Checkout',
+    'as' => 'cart.checkout'
+]);
+
+Route::get('/history', [
+    'uses' => 'App\Http\Controllers\userController@History',
+    'as' => 'user.history'
 ]);
