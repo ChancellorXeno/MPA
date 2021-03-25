@@ -65,7 +65,7 @@ Route::get('/remove-from-cart/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Destroy',
     'as' => 'product.destroy'
 ]);
-Route::get('/chechout', [
+Route::get('/checkout', [
     'uses' => 'App\Http\Controllers\CartController@Checkout',
     'as' => 'cart.checkout'
 ]);

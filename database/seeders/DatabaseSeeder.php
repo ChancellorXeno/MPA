@@ -77,13 +77,17 @@ class DatabaseSeeder extends Seeder
             ['product_id' => 20, 'category_id' => 4],
             ['product_id' => 21, 'category_id' => 4],
             ['product_id' => 22, 'category_id' => 4],
+            ['product_id' => 23, 'category_id' => 5],
             ['product_id' => 23, 'category_id' => 4],
             ['product_id' => 24, 'category_id' => 5],
             ['product_id' => 25, 'category_id' => 5],
             ['product_id' => 26, 'category_id' => 5],
             ['product_id' => 27, 'category_id' => 5],
             ['product_id' => 28, 'category_id' => 5],
-            ['product_id' => 29, 'category_id' => 6]
+            ['product_id' => 29, 'category_id' => 6],
+            ['product_id' => 29, 'category_id' => 1],
+            ['product_id' => 29, 'category_id' => 2],
+            ['product_id' => 29, 'category_id' => 3]
         ]);
     }
 }

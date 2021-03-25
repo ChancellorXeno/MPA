@@ -46,7 +46,7 @@
 									<td class="image" data-title="No"><img src="{{$product['item']['image']}}" alt="#"></td>
 									<td class="product-des" data-title="Description">
 										<p class="product-name"><a href="#">{{$product['item']['name']}}</a></p>
-										<p class="product-des">{{$product['item']['category']}} Collection</p>
+										<p class="product-des">{{$product['category']}} Collection</p>
 									</td>
 									<td class="price" data-title="Price"><span>€{{$product['item']['price']}}</span></td>
 									<td class="qty" data-title="Qty">
@@ -99,8 +99,11 @@
 									<li>Cart Subtotal<span> €{{$totalPrice}}</span></li>
 								</ul>
 								<div class="button5">
-								@if(Auth::check()) 
+								@if(Auth::check() && $products != null) 
 									<a href="{{ route('cart.checkout') }}" class="btn">Checkout</a>
+								@elseif(Auth::check())
+									<a href="#" class="btn">Checkout</a>
+									<p>The cart is currently empty<p>
 								@else
 									<a href="login" class="btn">Checkout</a>
 								@endif

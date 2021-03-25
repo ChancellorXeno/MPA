@@ -90,11 +90,11 @@
 								<h3 class="cat-heading"><i class="fa fa-bars" aria-hidden="true"></i>CATEGORIES</h3>
 								<ul class="main-category">
 									<li><a href="/MPA/public/products-page/all">All Colors</a></li>
-									<li><a href="/MPA/public/products-page/primary">Primary Colors</a></li>
-									<li><a href="/MPA/public/products-page/secondary">Secondary Colors</a></li>
-									<li><a href="/MPA/public/products-page/tertiary">Tertiary Colors</a></li>
-									<li><a href="/MPA/public/products-page/pastel">Pastel Colors</a></li>
-									<li><a href="/MPA/public/products-page/shades">Shades of Grey</a></li>
+									<li><a href="/MPA/public/products-page/1">Primary Colors</a></li>
+									<li><a href="/MPA/public/products-page/2">Secondary Colors</a></li>
+									<li><a href="/MPA/public/products-page/3">Tertiary Colors</a></li>
+									<li><a href="/MPA/public/products-page/4">Pastel Colors</a></li>
+									<li><a href="/MPA/public/products-page/5">Shades of Grey</a></li>
 								</ul>
 							</div>
 						</div>

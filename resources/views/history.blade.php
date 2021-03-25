@@ -17,7 +17,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <ul class="list-group">
-                            @foreach($order->cart->items as $item)
+                            @foreach($orders as $item)
                                 <li class="list-group-item">
                                     <span class="badge">€{{$item['price']}}</span>
                                     {{$item['item']['name']}} | {{$item['qty']}} Unit(s)

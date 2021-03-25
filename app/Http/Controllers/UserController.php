@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\User;
+use App\Models\ProductOrder;
 use Auth;
 
 class UserController extends Controller
@@ -43,19 +44,17 @@ class UserController extends Controller
         // log out of the active account
         Auth::logout();
 
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
+        $logout = new User();
+        $logout->deleteSession($request);
 
         return redirect('/login');
     }
     public function history(){
         // shows the order history of the currently logged in user
+        $order = ProductOrder::get();
         $orders = Auth::user()->orders;
-        $orders->transform(function($order, $key){
-            $order->cart = unserialize($order->cart);
-            return $order;
-        });
+
+        dd($orders);
         return view('history', ['orders' => $orders]);
     }
 }
