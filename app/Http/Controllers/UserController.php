@@ -13,6 +13,7 @@ class UserController extends Controller
         return view('register');
     }
     public function postRegister(Request $request){
+        // register a new account
         $validated = $request->validate([
             'username' => 'required|unique:users,username',
             'password' => 'required|min:3'
@@ -31,13 +32,15 @@ class UserController extends Controller
         return view('login');
     }
     public function postLogin(Request $request){
+        // log into an existing account
         if (Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')])){
-            return redirect()->route('home');
+            return view('index');
         }else{
             return back();
         }
     }
     public function logout(Request $request){
+        // log out of the active account
         Auth::logout();
 
         $request->session()->invalidate();
@@ -47,6 +50,7 @@ class UserController extends Controller
         return redirect('/login');
     }
     public function history(){
+        // shows the order history of the currently logged in user
         $orders = Auth::user()->orders;
         $orders->transform(function($order, $key){
             $order->cart = unserialize($order->cart);

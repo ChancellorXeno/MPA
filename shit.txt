@@ -1,0 +1,49 @@
+**MPA** 
+word gebruikt om grotere projecten te maken
+*hele site*
+
+**SPA** 
+is sneller, maar voor kleinere projecten
+
+een **framework** 
+is een verzameling aan functies die je aan kan roepen 
+*laravel*
+
+**Dependency Management** 
+zorgt er voor dat dependencies samen functioneel zijn 
+*CategoryController extends Controller*
+
+**hasFactory** 
+*zorgt ervoor dat de model aan de database verbindt*
+
+**Authentication & Authorization** 
+*login page*
+
+--------------------------------------------------------------------------
+
+**MVC** 
+*Model View Controller*
+
+**Routing** 
+*web.php*
+
+**Templating** 
+*Blade*
+
+**Middleware** 
+*offert dingen die de OS niet offert* 
+(data management / authentication)
+
+**ORM (Object Relational Mapping)** 
+*brug tussen code en DB* 
+(migrations)
+
+**Session management (stateful)** 
+*zorgt voor het maken, managen, en verwijderen van sessie*
+
+The major difference between stateless vs Stateful 
+In case of stateless, the client has to provide all the info so lot of 
+parameters may need to be passed in each request
+
+**API**
+*medium tussen user input en database*

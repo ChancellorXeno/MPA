@@ -92,7 +92,7 @@
 									<li><a href="/MPA/public/products-page/all">All Colors</a></li>
 									<li><a href="/MPA/public/products-page/primary">Primary Colors</a></li>
 									<li><a href="/MPA/public/products-page/secondary">Secondary Colors</a></li>
-									<li><a href="/MPA/public/products-page/tetriary">Tetriary Colors</a></li>
+									<li><a href="/MPA/public/products-page/tertiary">Tertiary Colors</a></li>
 									<li><a href="/MPA/public/products-page/pastel">Pastel Colors</a></li>
 									<li><a href="/MPA/public/products-page/shades">Shades of Grey</a></li>
 								</ul>

@@ -4,29 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Color;
+use App\Models\Product;
 
 class CategoryController extends Controller
 {
     public function index($category){
-        $colors = Color::where('category', $category)->get();
+        // collect all the products in the requested category
+        $products = Product::where('category', $category)->get();
 
         return view('products-page', [
-            'colors' => $colors
+            'products' => $products
         ]);
     }
     public function getAll(){
-        $colors = Color::get();
+        // collect all products
+        $products = Product::get();
 
         return view('products-page', [
-            'colors' => $colors
+            'products' => $products
         ]);
     }
     public function getOne($id){
-        $color = Color::where('id', $id)->get();
+        // collect a specific product
+        $product = Product::where('id', $id)->get();
 
         return view('product', [
-            'color' => $color
+            'product' => $product
         ]);
     }
 }

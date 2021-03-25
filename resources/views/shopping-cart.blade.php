@@ -53,13 +53,13 @@
 									<!-- Input Order -->
 										<div class="input-group">
 											<div class="button minus">
-												<a href="{{ route('color.decrease', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+												<a href="{{ route('product.decrease', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
 													<i class="ti-minus"></i>
 												</a>
 											</div>
 											<input type="text" name="quant[1]" class="input-number"  data-min="1" data-max="100" value="{{$product['qty']}}">
 											<div class="button plus">
-												<a href="{{ route('color.addToCart', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
+												<a href="{{ route('product.addToCart', ['id' => $product['item']['id']]) }}" type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[1]">
 													<i class="ti-plus"></i>
 												</a>
 											</div>
@@ -67,7 +67,7 @@
 										<!--/ End Input Order -->
 									</td>
 									<td class="total-amount" data-title="Total"><span>€{{$product['price']}}</span></td>
-									<td class="action" data-title="Remove"><a href="{{ route('color.destroy', ['id' => $product['item']['id']]) }}"><i class="ti-trash remove-icon"></i></a></td>
+									<td class="action" data-title="Remove"><a href="{{ route('product.destroy', ['id' => $product['item']['id']]) }}"><i class="ti-trash remove-icon"></i></a></td>
 								</tr>
 <?php 						} 
 						}else{

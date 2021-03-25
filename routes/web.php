@@ -46,26 +46,26 @@ Route::get('/products-page/{category}', 'App\Http\Controllers\CategoryController
 
 Route::get('/product/{id}', [
     'uses' => 'App\Http\Controllers\CategoryController@getOne',
-    'as' => 'color.product'
+    'as' => 'product.product'
 ]);
 
 Route::get('/cart', [
     'uses' => 'App\Http\Controllers\CartController@index',
-    'as' => 'color.shoppingCart'
+    'as' => 'product.shoppingCart'
 ]);
 Route::get('/add-to-cart/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Store',
-    'as' => 'color.addToCart'
+    'as' => 'product.addToCart'
 ]);
 Route::get('/decrease/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Decrease',
-    'as' => 'color.decrease'
+    'as' => 'product.decrease'
 ]);
 Route::get('/remove-from-cart/{id}', [
     'uses' => 'App\Http\Controllers\CartController@Destroy',
-    'as' => 'color.destroy'
+    'as' => 'product.destroy'
 ]);
-Route::get('/checkout', [
+Route::get('/chechout', [
     'uses' => 'App\Http\Controllers\CartController@Checkout',
     'as' => 'cart.checkout'
 ]);
