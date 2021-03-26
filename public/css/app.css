@@ -73,8 +73,7 @@ img{
 .ti-minus{
 	padding-left: 32px;
 }
-/* Register/Login */
-/* form{
-	max-width: 50%;
-	text-align: center;
-} */
+/* History page */
+.history_block{
+	width: 1300px !important;
+}

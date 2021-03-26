@@ -50,19 +50,12 @@ class CartController extends Controller
     }
     public function checkout(){
         // confirm an order
-        $cart = new Cart();
         $order = new Order();
-
         Auth::user()->orders()->save($order);
         
-        foreach($cart->items as $product){
-            $productorder = new ProductOrder();
-            $productorder->product_id = $product['item']['id'];
-            $productorder->order_id = Order::orderBy('id', 'desc')->value('id');
-            $productorder->user_id = Auth::user()->value('id');
-            // dd($productorder->user_id);
-            $productorder->save();
-        }
+        // send cart to DB
+        $cart = new Cart();
+        $cart->checkout($cart);
 
         // Wipe the cart
         $cart->forget();

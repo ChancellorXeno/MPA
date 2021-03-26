@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Session;
+use Auth;
 
 Class Cart
 {
@@ -61,6 +62,16 @@ Class Cart
         $this->totalQty -= $this->items[$id]['qty'];
         $this->totalPrice -= $this->items[$id]['price'];
         unset($this->items[$id]);
+    }
+    public function checkout($cart){
+        foreach($cart->items as $product){
+            $productorder = new ProductOrder();
+            $productorder->product_id = $product['item']['id'];
+            $productorder->product_qty = $product['qty'];
+            $productorder->order_id = Order::orderBy('id', 'desc')->value('id');
+            $productorder->user_id = Auth::user()->orders()->value('user_id');
+            $productorder->save();
+        }
     }
     public function forget(){
         Session::forget('cart');
