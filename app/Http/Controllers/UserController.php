@@ -13,6 +13,7 @@ use Auth;
 class UserController extends Controller
 {
     public function getRegister(){
+        // send the user to the signup page
         return view('register');
     }
     public function postRegister(Request $request){
@@ -32,6 +33,7 @@ class UserController extends Controller
     }
 
     public function getLogin(){
+        // send the user to the login page
         return view('login');
     }
     public function postLogin(Request $request){
@@ -63,22 +65,3 @@ class UserController extends Controller
         return view('history', ['orders' => $orders]);
     }
 }
-
-
-
-
-
-
-// $usercheck = Auth::user()->orders;
-// foreach($usercheck as $order){
-//     $user_id = $order->user_id;
-// }
-// $orders = ProductOrder::where('user_id', $user_id)->get();
-// foreach($orders as $order){
-//     $order->product = Product::where('id', $order->product_id)->get();
-//     foreach($order->product as $item){
-//         $item['price'] = $item['price'] * $order->product_qty;
-//         $order->totalPrice = $order->totalPrice + $item['price'];
-//     }
-//     dd($order);
-// }

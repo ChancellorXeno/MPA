@@ -20,10 +20,6 @@ Class Cart
             $this->totalPrice = $oldCart->totalPrice;
         }
     }
-    public function getItems()
-    {
-        return $this->items;
-    }
     public function add($item, $id, $request, $cart)
     {
         // adds 1 to the quantity of the requested product
@@ -64,6 +60,7 @@ Class Cart
         unset($this->items[$id]);
     }
     public function checkout($cart){
+        // save the cart to the database, along with user id
         foreach($cart->items as $product){
             $productorder = new ProductOrder();
             $productorder->product_id = $product['item']['id'];
