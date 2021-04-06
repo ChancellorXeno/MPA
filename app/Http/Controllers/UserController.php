@@ -54,14 +54,8 @@ class UserController extends Controller
         return redirect('/login');
     }
     public function history(){
-        // shows the order history of the currently logged in user
-        $usercheck = Auth::user()->orders;
-        foreach($usercheck as $user){
-            $user_id = $user->user_id;
-        }
-        $orders = Order::
-        where('user_id', $user_id)->orderBy('id', 'DESC')->get();
-
+        $orders = Auth::user()->orders;
+        
         return view('history', ['orders' => $orders]);
     }
 }
