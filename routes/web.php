@@ -71,6 +71,10 @@ Route::get('/checkout', [
 ]);
 
 Route::get('/history', [
-    'uses' => 'App\Http\Controllers\userController@History',
+    'uses' => 'App\Http\Controllers\UserController@History',
     'as' => 'user.history'
+]);
+Route::get('/history/{order_id}', [
+    'uses' => 'App\Http\Controllers\UserController@deleteOrder',
+    'as' => 'user.deleteOrder'
 ]);

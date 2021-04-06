@@ -89,5 +89,8 @@ class DatabaseSeeder extends Seeder
             ['product_id' => 29, 'category_id' => 2],
             ['product_id' => 29, 'category_id' => 3]
         ]);
+        DB::table('users')->insert([
+            ['username' => 'admin', 'password' => bcrypt('admin')]
+            ]);
     }
 }

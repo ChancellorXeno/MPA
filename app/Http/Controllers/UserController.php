@@ -54,8 +54,21 @@ class UserController extends Controller
         return redirect('/login');
     }
     public function history(){
-        $orders = Auth::user()->orders;
+        // $username = Auth::user()->username;
+        if (Auth::user()->username == 'admin'){
+            $orders = Order::get();
+        }else(
+            $orders = Auth::user()->orders
+        );
         
+        $orders = $orders->reverse();
+        // dd($orders);
         return view('history', ['orders' => $orders]);
+    }
+    public function deleteOrder($order_id){
+        Order::where('id', $order_id)->delete();
+        productOrder::where('order_id', $order_id)->delete();
+
+        return view('history');
     }
 }
