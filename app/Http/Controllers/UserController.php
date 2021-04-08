@@ -12,12 +12,16 @@ use Auth;
 
 class UserController extends Controller
 {
+    /**
+     * Send the user to the signup page
+     */
     public function getRegister(){
-        // send the user to the signup page
         return view('register');
     }
+    /**
+     * Register a new account
+     */
     public function postRegister(Request $request){
-        // register a new account
         $validated = $request->validate([
             'username' => 'required|unique:users,username',
             'password' => 'required|min:3'
@@ -31,21 +35,26 @@ class UserController extends Controller
 
         return redirect()->route('user.login');
     }
-
+    /**
+     * Send the user to the login page
+     */
     public function getLogin(){
-        // send the user to the login page
         return view('login');
     }
+    /**
+     * Log into an existing account
+     */
     public function postLogin(Request $request){
-        // log into an existing account
         if (Auth::attempt(['username' => $request->input('username'), 'password' => $request->input('password')])){
             return view('index');
         }else{
             return back();
         }
     }
+    /**
+     * Log out of the active account
+     */
     public function logout(Request $request){
-        // log out of the active account
         Auth::logout();
 
         $logout = new User();
@@ -53,8 +62,11 @@ class UserController extends Controller
 
         return redirect('/login');
     }
+    /**
+     * Collect the orders of active user 
+     * Collect all orders if user is admin
+     */
     public function history(){
-        // $username = Auth::user()->username;
         if (Auth::user()->username == 'admin'){
             $orders = Order::get();
         }else(
@@ -62,9 +74,13 @@ class UserController extends Controller
         );
         
         $orders = $orders->reverse();
-        // dd($orders);
         return view('history', ['orders' => $orders]);
     }
+    /**
+     * Delete an order from the order history
+     * 
+     * @param $order_id the id of the order
+     */
     public function deleteOrder($order_id){
         Order::where('id', $order_id)->delete();
         productOrder::where('order_id', $order_id)->delete();

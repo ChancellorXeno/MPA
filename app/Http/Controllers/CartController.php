@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
+use App\Classes\Cart;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\ProductCategory;
@@ -16,8 +16,11 @@ use Auth;
 
 class CartController extends Controller
 {
+    /**
+     * Render a list of a resource
+     */
     public function index(){
-        // render a list of a resource
+        // 
         $cart = new Cart();
 
         return view('shopping-cart', [
@@ -25,29 +28,44 @@ class CartController extends Controller
             'totalPrice' => $cart->totalPrice
         ]);
     }
+    /**
+     * Places the requested product in the cart
+     * 
+     * @param $id (is?) the requested product
+     */
     public function store(Request $request, $id){ 
-        // places the requested product in the cart
         $product = Product::find($id);
         $cart = new Cart();
         $cart->add($product, $product->id, $request, $cart);
 
         return redirect()->back();
     }
+    /**
+     * Decrease amount of selected product by one
+     * 
+     * @param $id the selected product
+     */
     public function decrease($id)
     {
-        // decrease amount of selected product by one
         $cart = new Cart();
         $cart->decrease($id, $cart);
 
         return redirect()->back();
     }
+    /**
+     * Delete the resource
+     * 
+     * @param $id the selected product
+     */
     public function destroy($id){
-        // Delete the resource
         $cart = new Cart();
         $cart->destroy($id, $cart);
 
         return redirect()->back();
     }
+    /**
+     * Saves current cart to the Database
+     */
     public function checkout(){
         // confirm an order
         $order = new Order();

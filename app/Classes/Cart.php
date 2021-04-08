@@ -20,9 +20,16 @@ Class Cart
             $this->totalPrice = $oldCart->totalPrice;
         }
     }
+
+    /**
+     * Add 1 to the quantity of the requested product
+     * 
+     * @param $item storedItem to save
+     * @param id of $item
+     * @param $cart location where $item is stored
+     */
     public function add($item, $id, $request, $cart)
     {
-        // adds 1 to the quantity of the requested product
         $request->session()->put('cart', $cart);
         $category_id = ProductCategory::where('product_id', $id)->value('category_id');
         $category = Category::where('id', $category_id)->value('name');
@@ -39,9 +46,14 @@ Class Cart
         $this->totalQty++;
         $this->totalPrice += $item->price;
     }
+    /**
+     * Decrease the quantity of the requested product by 1
+     * 
+     * @param $id of product
+     * @param $cart where quantity is saved
+     */
     public function decrease($id, $cart)
     {
-        // decrease the quantity of the requested product by 1
         Session::put('cart', $cart);
         $this->items[$id]['qty']--;
         $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
@@ -51,16 +63,25 @@ Class Cart
             unset($this->items[$id]);
         }
     }
+    /**
+     * Delete the entire quantity of the requested product
+     * 
+     * @param $id of product
+     * @param $cart where quantity is saved
+     */
     public function destroy($id, $cart)
     {
-        // delete the entire quantity of the requested product
         Session::put('cart', $cart);
         $this->totalQty -= $this->items[$id]['qty'];
         $this->totalPrice -= $this->items[$id]['price'];
         unset($this->items[$id]);
     }
+    /**
+     * Save the cart to the database, along with user id
+     * 
+     * @param $cart that's being saved to the DB
+     */
     public function checkout($cart){
-        // save the cart to the database, along with user id
         foreach($cart->items as $product){
             $productorder = new ProductOrder();
             $productorder->product_id = $product['item']['id'];
@@ -70,6 +91,9 @@ Class Cart
             $productorder->save();
         }
     }
+    /**
+     * Forget the current cart contents
+     */
     public function forget(){
         Session::forget('cart');
     }
